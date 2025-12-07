@@ -84,4 +84,9 @@ app.put("/lessons/:id", async function(req, res){
   })
 })
 
+// Test route for Render
+app.get('/', (req, res) => {
+  res.send('Lesson API is live ✅');
+});
+
 app.listen(port);
