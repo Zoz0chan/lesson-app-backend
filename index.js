@@ -62,3 +62,26 @@ async function updateOrderSpaces(orderList){
 }
 
 app.post("/checkout", async function(req, res){
+  let collection  = db.collection("orders");
+  let order = req.body;
+  console.log("Received order:", order);
+  collection.insertOne(order)
+  .then(updateOrderSpaces(order.cart)).then(res.sendStatus(200))
+  .catch(res.sendStatus(500));
+})
+
+app.put("/lessons/:id", async function(req, res){
+  let collection  = db.collection("lessons");
+  let id = req.params.id;
+  let updatedData = req.body;
+  collection.updateOne({_id: new ObjectId(id)}, {$set: updatedData})
+  .then((result) => {
+    if(result.matchedCount > 0){
+      res.sendStatus(200);
+    }else{
+      res.sendStatus(404);
+    }
+  })
+})
+
+app.listen(port);
