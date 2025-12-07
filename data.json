@@ -76,15 +76,14 @@
     "location": "Colindale", 
     "price": 16,
     "spaces": 5,
-    "level": "Intermediate",
     "icon": "fa-globe",
     "descript": "World geography and environmental studies"
   },
   {
     "subject": "Spanish",
     "location": "Brent Cross",
-    "price": 26,
-    "spaces": 6,
+    "price": 24,
+    "spaces": 5,
     "icon": "fa-language",
     "description": "Be fluent in Spanish language and culture"
   },
